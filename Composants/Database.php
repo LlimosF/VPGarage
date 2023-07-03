@@ -1,11 +1,11 @@
 <?php
 
-$userdb = "llimos";
-$pass = 'Titine19!';
+$userdb = "root";
+$pass = '';
 
 try {
 
-  $db = new PDO('mysql:host=mysql-llimos.alwaysdata.net;dbname=llimos_database', $userdb, $pass);
+  $db = new PDO('mysql:host=localhost;dbname=database', $userdb, $pass);
 
 } catch (PDOException $e) {
 
