@@ -22,26 +22,29 @@ if (!empty($_POST)) {
         $user = $query->fetch();
 
         if (!$user) {
-            echo("Erreur lors de la connexion");
+            echo "Erreur lors de la connexion";
+        } else {
+            if(!password_verify($_POST["password"], $user["password"])) {
+                echo "Le mot de passe et / ou l'adresse e-mail est incorrect";
+            } else {
+        
+                session_start();
+
+                $_SESSION["user"] = [
+                    "id" => $user["id"],
+                    "nom" => $user["nom"],
+                    "email" => $user["email"],
+                    "role" => $user["role"]
+                ];
+
+                header("Location: Modification.php");
+                exit();
+            }
         }
-
-        if (!password_verify($_POST["password"], $user["password"])) {
-            echo("L'utilisateur et/ou le mot de passe est incorrect");
-        }
-
-        session_start();
-
-        $_SESSION["user"] = [
-            "id" => $user["id"],
-            "nom" => $user["nom"],
-            "email" => $user["email"],
-            "role" => $user["role"]
-        ];
-
-        header("Location: Modification.php");
-        exit();
     }
-}
+}    
+
+
 
 ?>
 
