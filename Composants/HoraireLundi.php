@@ -2,7 +2,7 @@
 
 // Check that the user is logged in
 
-require_once("../Composants/VerifierAdmin.php");
+require_once("VerifierAdmin.php");
 
 // We check that the form is correctly filled in
 
@@ -19,7 +19,7 @@ if(!empty($_POST)) {
 
     // Include the database
 
-    require_once("../Composants/Database.php");
+    require_once("Database.php");
 
     $id = 1;
 

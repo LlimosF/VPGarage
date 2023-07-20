@@ -20,7 +20,7 @@ $commentaires = $requete->fetchAll();
   <div class="commentaire">
     <div class="top-commentaire">
       <div class="user">
-        <img src="../media/homme.png" class="user-logo" alt="Photo de personnage">
+        <img src="media/homme.png" class="user-logo" alt="Photo de personnage">
       </div>
       <div>
         <p><?= $commentaire["nom"] ?></p>

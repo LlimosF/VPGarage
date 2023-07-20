@@ -14,7 +14,7 @@
 <main>
   <div class="bloc-white first-container-bloc">
     <div class="try">
-      <img src="../media/favicon.png" alt="" class="card-1" />
+      <img src="media/favicon.png" alt="" class="card-1" />
     </div>
   </div>
   <div class="container-about">

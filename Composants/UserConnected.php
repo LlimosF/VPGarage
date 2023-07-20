@@ -8,6 +8,6 @@ session_start();
 
       // Redirect to login page if user is not logged in
 
-      header("Location: ../Connexion.php");
+      header("Location: Connexion.php");
       exit();
   }

@@ -4,7 +4,7 @@ require("Database.php");
 
 ob_start();
 
-require("../Connexion.php");
+require("Connexion.php");
 
 ob_end_clean();
 

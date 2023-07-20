@@ -10,9 +10,9 @@
     />
   <title>Vincent Parrot</title>
   <link rel="icon" type="image/x-icon" href="../media/favicon.png">
-  <link rel="stylesheet" href="../CSS/style.css">
-  <link rel="stylesheet" href="../CSS/BackgroundFixed.css">
-  <link rel="stylesheet" href="../CSS/Footer.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/BackgroundFixed.css">
+  <link rel="stylesheet" href="CSS/Footer.css">
 </head>
 <body>
   </div>
@@ -20,10 +20,10 @@
   <nav class="navbar container">
     <h1>Vincent Parrot</h1>
     <input type="checkbox" id="toggler" />
-    <label for="toggler"><img src="../media/burger.png" class="burgerLogo"></img></label>
+    <label for="toggler"><img src="media/burger.png" class="burgerLogo"></img></label>
     <div class="menu">
       <ul class="list">
-        <a href="/"><li class="LiNavTop">Accueil</li></a>
+        <a href="index.php"><li class="LiNavTop">Accueil</li></a>
         <a href="Reparation.php"><li class="LiNavTop">Réparation</li></a>
         <a href="Vente.php"><li class="LiNavTop">Vente</li></a>
         <a href="Contact.php"><li class="LiNavTop">Contact</li></a>
