@@ -2,23 +2,23 @@
 
 // Include the header
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // We include the bottom of the page
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // Check if the user is logged in
 
-require_once("Composants/UserConnected.php");
+require_once("../composants/utilisateur-connecte.php");
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // We include our navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // Variable to track if an ad has been successfully removed
 
@@ -26,24 +26,9 @@ $annonceSupprimee = false;
 
 // We check if the delete button has been clicked
 
-if (isset($_POST["delete"])) {
-    $idToDelete = $_POST["delete"];
 
-    // We create the SQL query to delete a car
-
-    $deletesql = "DELETE FROM voitures WHERE id = :id";
-    $stmt = $db->prepare($deletesql);
-    $stmt->bindParam(':id', $idToDelete, PDO::PARAM_INT);
-
-    if ($stmt->execute()) {
-        $annonceSupprimee = true;
-        header("Location: ".$_SERVER['PHP_SELF']);
-        exit();
-    }
-}
 
 ?>
-<h2 class="big-title">Supprimer une annonce</h2>
 <div class="container-vente">
 
   <!-- We retrieve our vehicles that are already on sale from the database -->
@@ -81,7 +66,28 @@ if (isset($_POST["delete"])) {
     <!-- Form to delete the ad -->
 
     <form method="POST">
-      <button type="submit" name="delete" class="btn" value="<?= $voiture["id"] ?>">Supprimer l'annonce</button>
+      <button type="submit" name="delete" class="delete" value="<?= $voiture["id"] ?>">Supprimer l'annonce</button>
+      <?php 
+        if (isset($_POST["delete"])) {
+          $idToDelete = $_POST["delete"];
+      
+          // We create the SQL query to delete a car
+      
+          $deletesql = "DELETE FROM voitures WHERE id = :id";
+          $stmt = $db->prepare($deletesql);
+          $stmt->bindParam(':id', $idToDelete, PDO::PARAM_INT);
+      
+          if ($stmt->execute()) {
+              $annonceSupprimee = true;
+
+              echo "<h2 class='success'>Annonce supprimé !</h2>";
+          } else {
+      
+            echo "<h2 class='error'>Erreur lors de la suppression de l'annonce !</h2>";
+      
+          }
+      }
+      ?>
     </form>
   </div>
 

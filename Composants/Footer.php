@@ -35,3 +35,5 @@ $horaires = $requete->fetchAll();
     <p>Copyright 2023 Vincent Parrot GARAGE</p>
   </div>
 </footer>
+</body>
+</html>

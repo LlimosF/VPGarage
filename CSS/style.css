@@ -7,6 +7,75 @@ body {
   min-height: 100%;
 }
 
+.black {
+  word-break: break-word;
+  margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: rgb(247, 247, 247);
+}
+
+textarea {
+  font-family: 'Belanosima', sans-serif;
+  width: 80%;
+  padding: 5px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 30px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  padding: 30px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.validate {
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(19, 199, 19);
+  width: 80%;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-family: 'Belanosima', sans-serif;
+}
+
+.validate:hover {
+  border: 1px solid rgb(19, 199, 19);
+  color: rgb(19, 199, 19);
+  background-color: white;
+}
+
+.delete {
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: red;
+  width: 80%;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-family: 'Belanosima', sans-serif;
+}
+
+.delete:hover {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
 /* HEADER */
 /* HEADER */
 /* HEADER */
@@ -27,6 +96,10 @@ h1 {
 .container {
   margin: 0;
   padding: 15px;
+}
+
+select {
+  font-family: 'Belanosima', sans-serif;
 }
 
 .navbar {
@@ -116,6 +189,117 @@ li {
   }
 }
 
+/* */
+
+.header1 {
+  margin-top: 100px;
+  z-index: 1;
+  width: 100%;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.container1 {
+  margin: 0;
+  padding: 15px;
+}
+
+select {
+  font-family: 'Belanosima', sans-serif;
+}
+
+.navbar1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.burgerLogo1 {
+  width: 20px;
+}
+
+li {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.navbar1 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo1 {
+  margin-right: 50px;
+}
+
+.list1 {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#toggler1, .navbar1 label {
+  display: none;
+}
+
+.social-link1 {
+  justify-self: center;
+}
+
+@media screen and (max-width: 54900px) {
+  .menu1 {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+  }
+
+  .list1 {
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+  }
+
+  .navbar1 label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+  }
+  
+  #toggler1:checked ~ .menu1 {
+      max-height: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LinkNav1 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .LinkNav1 {
+    font-size: 16px;
+  }
+  .footer {
+    grid-template-columns: [] 1fr [] 1fr [];
+    grid-template-rows: [] 1fr [] 1fr [];
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+/* */
+
 /* END OF HEADER */
 /* END OF HEADER */
 /* END OF HEADER */
@@ -201,6 +385,7 @@ li {
 .title-form {
   padding-top: 50px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .center {
@@ -483,6 +668,11 @@ span {
   }
 }
 
+.card-car {
+  width: 80%;
+  box-shadow: 0 0 15px black;
+}
+
 .modify-title {
   color: black;
   font-size: 50px;
@@ -496,11 +686,11 @@ span {
 .form {
   width: 80%;
   box-shadow: 0 0 10px black;
-
   margin-left: 10%;
   text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
+  padding-bottom: 30px;
   background-color: white;
 }
 
@@ -520,20 +710,23 @@ label {
 input {
   height: 25px;
   width: 80%;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid gray;
+  font-family: 'Belanosima', sans-serif;
 }
 
 .btn {
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin-top: 10px;
   font-size: 16px;
   padding: 10px;
-  border-radius: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
   border: 1px solid gray;
-  width: 60%;
+  width: 80%;
   color: gray;
-  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Belanosima', sans-serif;
 }
 
 .title-modification {
@@ -567,7 +760,7 @@ input {
   }
 
   .btn {
-    font-size: 20px;
+    font-size: 16px;
   }
   
   .title-modification {

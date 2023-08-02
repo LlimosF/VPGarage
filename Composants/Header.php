@@ -15,21 +15,19 @@
   <link rel="stylesheet" href="CSS/Footer.css">
 </head>
 <body>
-  </div>
-<header class="header">
-  <nav class="navbar container">
-    <h1>Vincent Parrot</h1>
-    <input type="checkbox" id="toggler" />
-    <label for="toggler"><img src="media/burger.png" class="burgerLogo"></img></label>
-    <div class="menu">
-      <ul class="list">
-        <a href="index.php"><li class="LiNavTop">Accueil</li></a>
-        <a href="Reparation.php"><li class="LiNavTop">Réparation</li></a>
-        <a href="Vente.php"><li class="LiNavTop">Vente</li></a>
-        <a href="Contact.php"><li class="LiNavTop">Contact</li></a>
-        <a href="Modification.php"><li class="LiNavTop">Gestion</li></a>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+  <header class="header">
+    <nav class="navbar container">
+      <h1>Vincent Parrot</h1>
+      <input type="checkbox" id="toggler" />
+      <label for="toggler"><img src="media/burger.png" class="burgerLogo"></img></label>
+      <div class="menu">
+        <ul class="list">
+          <a href="index.php"><li class="LiNavTop">Accueil</li></a>
+          <a href="reparation.php"><li class="LiNavTop">Réparation</li></a>
+          <a href="vente.php"><li class="LiNavTop">Vente</li></a>
+          <a href="contact.php"><li class="LiNavTop">Contact</li></a>
+          <a href="gestion/gestion.php"><li class="LiNavTop">Gestion</li></a>
+        </ul>
+      </div>
+    </nav>
+  </header>

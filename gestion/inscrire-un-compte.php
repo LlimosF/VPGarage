@@ -2,27 +2,27 @@
 
 // Check that the user is logged in
 
-require_once("Composants/UserConnected.php");
+require_once("../composants/utilisateur-connecte.php");
 
 // We include the header
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // We include the bottom of the page
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // We include the navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // We check if the connected account has the admin role
 
-require_once("Composants/VerifierAdmin.php");
+require_once("../composants/verifier-admin.php");
 
 // Create the registration form
 
@@ -62,26 +62,17 @@ if(isset($_POST["nom"], $_POST["email"], $_POST["password"]) && !empty($_POST["n
 ?>
 
 <div>
-  <h2 class="big-title">Inscrire un nouvel employé</h2>
   <form method="POST" class="form">
-    <div class="bloc-title first-bloc">
-      <label for="nom">Nom  <span>*</span></label>
+    <h3 class="title-form">Inscription</h3>
+    <div class="bloc-form">
+      <input type="text" name="nom" id="nom" placeholder="Nom *" required>
     </div>
     <div class="bloc-form">
-      <input type="text" name="nom" id="nom" required>
+      <input type="email" name="email" id="email" placeholder="Adresse e-mail *" required>
     </div>
     <div class="bloc-form">
-      <label for="email">E-mail  <span>*</span></label>
+      <input type="password" name="password" id="password" placeholder="Mot de passe *" required>
     </div>
-    <div class="bloc-form">
-      <input type="email" name="email" id="email" required>
-    </div>
-    <div class="bloc-title">
-      <label for="password">Mot de passe  <span>*</span></label>
-    </div>
-    <div class="bloc-form">
-      <input type="password" name="password" id="password" required>
-    </div>
-    <button type="submit" class="btn">Inscrire</button>
+    <button type="submit" class="validate">Inscrire</button>
   </form>
 </div>

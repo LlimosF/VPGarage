@@ -1,13 +1,8 @@
 <?php
 
-  // We include the header for the home page
+  require_once("composants/header.php");
 
-  require_once("Composants/Header.php");
-
-  // We include the background of the website
-
-  require_once("Composants/BackgroundFixed.php");
-
+  require_once("Composants/background-fixed.php");
 
 ?>
 
@@ -36,13 +31,9 @@
 
 <?php
 
-  // We include the repair strip
+  require_once("composants/boucle-bandeau.php");
 
-  require_once("Composants/BoucleBandeau.php");
-
-  // We include the script to be able to add comments
-
-  require_once("Composants/AddCommentaire.php");
+  require_once("Composants/ajouter-commentaire.php");
 
 ?>
 
@@ -50,9 +41,7 @@
 
 <?php
 
-  // We add all the comments recovered in the database
-
-  require_once("Composants/Commentaires.php");
+  require_once("composants/commentaires.php");
 
 ?>
 
@@ -60,11 +49,6 @@
 
 <?php
 
-  // We include the footer for the homepage
-
-  require_once("Composants/Footer.php"); 
+  require_once("composants/footer.php"); 
   
 ?>
-
-</body>
-</html>

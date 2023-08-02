@@ -1,10 +1,10 @@
 <?php
 
-require_once("Composants/Header.php");
+require_once("composants/header.php");
 
-require_once("Composants/Database.php");
+require_once("composants/database.php");
 
-require_once("Composants/BackgroundFixed.php");
+require_once("composants/background-fixed.php");
 
 echo "<div class='page-vente'>";
 
@@ -59,47 +59,53 @@ echo "</div>";
 <form class="form" method="POST">
   <h3 class="title-form"><?= $voiture["nom"] ?></h3>
   <div class="bloc-form">
-    <label for="vehicule">Véhicule : <span>*</span></label>
-  </div>
-  <div class="bloc-form">
     <input type="text" id="vehicule" name="vehicule" value="<?= $voiture["nom"] ?> " readonly>
   </div>
   <div class="bloc-form">
-    <label for="nom">Nom : <span>*</span></label>
+    <input type="text" id="nom" placeholder="Nom *" name="nom" required>
   </div>
   <div class="bloc-form">
-    <input type="text" id="nom" name="nom">
+    <input type="number" id="telephone" placeholder="Numéro de téléphone *" name="telephone" required>
   </div>
-  <div class="bloc-form">
-    <label for="telephone">Téléphone : <span>*</span></label>
-  </div>
-  <div class="bloc-form">
-    <input type="text" id="telephone" name="telephone">
-  </div>
-  <button type="submit" class="btn">Acheter</button>
+  <button type="submit" class="validate">Envoyer</button>
+
+  <?php
+
+  if(!empty($_POST)){
+    if(isset($_POST["vehicule"], $_POST["nom"], $_POST["telephone"])
+    && !empty($_POST["vehicule"]) && !empty($_POST["nom"]) && !empty($_POST["telephone"])){
+  
+      $insert = "INSERT INTO formulaire_vente(`vehicule`, `nom`, `telephone`) VALUES (:vehicule, :nom, :telephone)";
+      $query = $db->prepare($insert);
+  
+      $query->bindValue(":vehicule", $_POST["vehicule"], PDO::PARAM_STR);
+      $query->bindValue(":nom", $_POST["nom"], PDO::PARAM_STR);
+      $query->bindValue(":telephone", $_POST["telephone"], PDO::PARAM_INT);
+  
+      $query->execute();
+  
+      if($query->execute()){
+  
+        echo "<h2 class='success'>Le formulaire a bien été envoyé !</h2>";
+  
+      } else {
+  
+        echo "<h2 class='error'>Erreur lors de l'envoie du formulaire !</h2>";
+  
+      }
+  
+  
+    }
+  }
+
+  ?>
+
 </form>
 
 <?php 
 
 echo "</div>";
 
-if(!empty($_POST)){
-  if(isset($_POST["vehicule"], $_POST["nom"], $_POST["telephone"])
-  && !empty($_POST["vehicule"]) && !empty($_POST["nom"]) && !empty($_POST["telephone"])){
-
-    $insert = "INSERT INTO formulaire_vente(`vehicule`, `nom`, `telephone`) VALUES (:vehicule, :nom, :telephone)";
-    $query = $db->prepare($insert);
-
-    $query->bindValue(":vehicule", $_POST["vehicule"], PDO::PARAM_STR);
-    $query->bindValue(":nom", $_POST["nom"], PDO::PARAM_STR);
-    $query->bindValue(":telephone", $_POST["telephone"], PDO::PARAM_INT);
-
-    $query->execute();
-
-
-  }
-}
-
 // On inclu le footer
 
-require_once("Composants/Footer.php");
+require_once("composants/footer.php");

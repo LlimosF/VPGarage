@@ -2,23 +2,23 @@
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // Include the background fixed
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // Include the header
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // Include the navbar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // We check that the user is indeed an admin
 
-require_once("Composants/VerifierAdmin.php");
+require_once("../composants/verifier-admin.php");
 
 ?>
 
@@ -28,7 +28,7 @@ require_once("Composants/VerifierAdmin.php");
 
 <?php
 
-require_once("Composants/ModifierBandeau.php");
+require_once("../composants/modifier-bandeau.php");
 
 ?>
 
@@ -69,24 +69,15 @@ require_once("Composants/ModifierBandeau.php");
       <form class="form" method="POST">
         <h3 class="title-form"><?= $reparation["title"] ?></h3>
         <div class="bloc-form">
-          <label for="id">Id : <span>*</span></label>
-        </div>
-        <div class="bloc-form">
-          <input type="text" id="id" name="id" value="<?= $reparation["id"] ?>" readonly>
-        </div>
-        <div class="bloc-form">
-          <label for="title">Titre : <span>*</span></label>
+          <input type="hidden" id="id" name="id" value="<?= $reparation["id"] ?>" readonly>
         </div>
         <div class="bloc-form">
           <input type="text" id="title" name="title" value="<?= $reparation["title"] ?>" >
         </div>
         <div class="bloc-form">
-          <label for="content">Contenu : <span>*</span></label>
+          <textarea id="content" name="content" rows="5"><?= $reparation["content"] ?></textarea>
         </div>
-        <div class="bloc-form">
-          <input type="text" id="content" name="content" value="<?= $reparation["content"] ?>" >
-        </div>
-        <button type="submit" class="btn">Changer pour <?= $reparation["title"] ?></button>
+        <button type="submit" class="validate">Changer pour <?= $reparation["title"] ?></button>
       </form>
 
     <?php

@@ -2,23 +2,23 @@
 
 // Include header
 
-include_once("Composants/Header.php");
+include_once("../composants/header-gestion.php");
 
 // Include site background
 
-include_once("Composants/BackgroundFixed.php");
+include_once("../composants/background-fixed.php");
 
 // Check if the user is logged in
 
-require_once("Composants/UserConnected.php");
+require_once("../composants/utilisateur-connecte.php");
 
 // Include database
 
-include_once("Composants/Database.php");
+include_once("../composants/database.php");
 
 // Include navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // Retrieve the ID of the comment to delete
 
@@ -49,7 +49,6 @@ $commentaires = $requete->fetchAll();
 
 ?>
 
-<h2 class="big-title">Supprimer un commentaire</h2>
 
 <div>
   <div class="container-form">
@@ -57,30 +56,18 @@ $commentaires = $requete->fetchAll();
       <form method="POST" class="form">
         <h3 class="title-form"><?= $commentaire["nom"] ?></h3>
         <div class="bloc-form">
-          <label for="id">ID</label>
+          <input type="hidden" value="<?= $commentaire["id"] ?>" name="delete" id="id" readonly />
         </div>
         <div class="bloc-form">
-          <input type="text" value="<?= $commentaire["id"] ?>" name="delete" id="id" readonly />
+          <input type="text" value="<?= $commentaire["nom"] ?>" name="nom" id="nom" readonly/>
         </div>
         <div class="bloc-form">
-          <label for="nom">Nom</label>
+          <input type="text" value="<?= $commentaire["content"] ?>" name="content" id="content" readonly/>
         </div>
         <div class="bloc-form">
-          <input type="text" value="<?= $commentaire["nom"] ?>" name="nom" id="nom" />
+          <input type="text" value="<?= $commentaire["note"] . ' / 5' ?>" name="note" id="note" readonly/>
         </div>
-        <div class="bloc-form">
-          <label for="content">Commentaire</label>
-        </div>
-        <div class="bloc-form">
-          <input type="text" value="<?= $commentaire["content"] ?>" name="content" id="content" />
-        </div>
-        <div class="bloc-form">
-          <label for="note">Note</label>
-        </div>
-        <div class="bloc-form">
-          <input type="text" value="<?= $commentaire["note"] ?>" name="note" id="note" />
-        </div>
-        <button type="submit" class="btn">Supprimer le commentaire</button>
+        <button type="submit" class="delete">Supprimer le commentaire</button>
       </form>
     <?php endforeach; ?>
   </div>

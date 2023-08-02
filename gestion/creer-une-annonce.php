@@ -2,23 +2,23 @@
 
 // Check if the user is logged in
 
-require_once("Composants/UserConnected.php");
+require_once("../composants/utilisateur-connecte.php");
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // We include the header on the page
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // We include the bottom of the page
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // We include the navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // We check if the method on form is equal to POST
 
@@ -89,56 +89,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div>
-  <h2 class="big-title">Vendre une voiture</h2>
   <form method="POST" enctype="multipart/form-data" class="form">
-    <div class="bloc-form first-bloc">
-      <label for="nom">Nom de la voiture :</label>
-    </div>
+    <h3 class="title-form">Vendre une voiture</h3>
     <div class="bloc-form">
-      <input type="text" name="nom" id="nom" placeholder="Nissan 350z">
+      <input type="text" name="nom" id="nom" placeholder="Nom de la voiture *">
     </div>    
     <div class="bloc-form">
-      <label for="kilometrage">Kilométrage :</label>
+      <input type="text" name="kilometrage" id="kilometrage" placeholder="Kilométrage du véhicule *">
     </div>
     <div class="bloc-form">
-      <input type="text" name="kilometrage" id="kilometrage" placeholder="24.679km">
+      <input type="text" name="annee" id="annee" placeholder="Année *">
     </div>
     <div class="bloc-form">
-        <label for="annee">Année :</label>
-    </div>
-    <div class="bloc-form">
-      <input type="text" name="annee" id="annee" placeholder="2009">
-    </div>
-    <div class="bloc-form">
-      <label for="transmission">Transmission :</label>
-    </div>
-    <div class="bloc-form">
-      <input type="text" name="transmission" id="transmission" placeholder="Manuel">
-    </div>
-    <div class="bloc-form">
-      <label for="cylindre">Cylindré :</label>
+      <input type="text" name="transmission" id="transmission" placeholder="Transmission *">
     </div>
     <div class="bloc-form"> 
-      <input type="text" name="cylindre" id="cylindre" placeholder="3L5 V8">
-    </div>
-    <div class="bloc-form">
-      <label for="chevaux">Chevaux :</label>
+      <input type="text" name="cylindre" id="cylindre" placeholder="Cylindré *">
     </div>
     <div class="bloc-form"> 
-      <input type="text" name="chevaux" id="chevaux" placeholder="280">
+      <input type="text" name="chevaux" id="chevaux" placeholder="Chevaux *">
     </div>
     <div class="bloc-form">
-      <label for="prix">Prix :</label>
+      <input type="text" name="prix" id="prix" placeholder="Prix *">
     </div>
     <div class="bloc-form">
-      <input type="text" name="prix" id="prix" placeholder="26000">
+        <input type="file" name="photo" id="photo" accept="image/jpg, image/png, image/jpeg" placeholder="Photo de la voiture *">
     </div>
-    <div class="bloc-form">
-        <label for="photo">Photo :</label>
-    </div>
-    <div class="bloc-form">
-        <input type="file" name="photo" id="photo" accept="image/jpg, image/png, image/jpeg">
-    </div>
-    <button type="submit" class="btn">Ajouter la voiture</button>
+    <button type="submit" class="validate">Vendre la voiture</button>
   </form>
 </div>

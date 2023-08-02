@@ -2,27 +2,27 @@
 
 // We include the header
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // We include the bottom of the page
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // Check that the user is logged in
 
-require_once("Composants/UserConnected.php");
+require_once("../composants/utilisateur-connecte.php");
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // We check that only the admin can access this page
 
-require_once("Composants/VerifierAdmin.php");
+require_once("../composants/verifier-admin.php");
 
 // We include the navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // We retrieve all our users in the database
 
@@ -57,36 +57,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div>
-    <h2 class="big-title">Supprimer des utilisateurs</h2>
     <div class="container-form">
         <?php foreach($users as $user): ?>
             <form method="POST" class="form">
                 <h3 class="title-form"><?= $user["nom"] ?></h3>
                 <div class="bloc-form">
-                    <label for="ide">ID</label>
-                </div>
-                <div class="bloc-form">
-                    <input type="text" value="<?= $user["id"] ?>" name="ide" id="ide" readonly/>
-                </div>
-                <div class="bloc-form">
-                    <label for="nom">Nom</label>
+                    <input type="hidden" value="<?= $user["id"] ?>" name="ide" id="ide" readonly/>
                 </div>
                 <div class="bloc-form">
                     <input type="text" value="<?= $user["nom"] ?>" name="nom" id="nom" readonly/>
                 </div>
                 <div class="bloc-form">
-                    <label for="email">E-mail</label>
-                </div>
-                <div class="bloc-form">
                     <input type="text" value="<?= $user["email"] ?>" name="email" id="email" readonly/>
-                </div>
-                <div class="bloc-form">
-                    <label for="role">Rôle</label>
                 </div>
                 <div class="bloc-form">
                     <input type="text" value="<?= $user["role"] ?>" name="role" id="role" readonly/>
                 </div>
-                <button class="btn" type="submit" name="delete" value="<?= $user["id"] ?>">Supprimer l'utilisateur</button>
+                <button class="delete" type="submit" name="delete" value="<?= $user["id"] ?>">Supprimer l'utilisateur</button>
             </form>
         <?php 
             endforeach; 

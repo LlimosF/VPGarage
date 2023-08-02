@@ -2,23 +2,23 @@
 
 // Include the header
 
-require_once("Composants/Header.php");
+require_once("../composants/header-gestion.php");
 
 // Include the database
 
-require_once("Composants/Database.php");
+require_once("../composants/database.php");
 
 // We include the bottom of the page
 
-require_once("Composants/BackgroundFixed.php");
+require_once("../composants/background-fixed.php");
 
 // We include the management navigation bar
 
-require_once("Composants/NavbarCustom.php");
+require_once("../composants/navigation-gestion.php");
 
 // We check that only the admin can access this page
 
-require_once("Composants/VerifierAdmin.php");
+require_once("../composants/verifier-admin.php");
 
 $sql = "SELECT * FROM users ORDER BY id DESC";
 $requete = $db->query($sql);
@@ -63,36 +63,23 @@ if (!empty($_POST)) {
 <!-- We create the modification form for each registered user -->
 
 <div>
-  <h2 class="big-title">Modifier des utilisateurs</h2>
   <div class="container-form">
     <?php foreach ($users as $user) : ?>
       <form method="POST" class="form">
         <h3 class="title-form"><?= $user["nom"] ?></h3>
         <div class="bloc-form">
-          <label for="id">ID</label>
-        </div>
-        <div class="bloc-form">
-          <input type="text" value="<?= $user["id"] ?>" name="id" id="id" readonly />
-        </div>
-        <div class="bloc-form">
-          <label for="nom">Nom</label>
+          <input type="hidden" value="<?= $user["id"] ?>" name="id" id="id" readonly />
         </div>
         <div class="bloc-form">
           <input type="text" value="<?= $user["nom"] ?>" name="nom" id="nom" />
         </div>
         <div class="bloc-form">
-          <label for="email">E-mail</label>
-        </div>
-        <div class="bloc-form">
           <input type="text" value="<?= $user["email"] ?>" name="email" id="email" />
-        </div>
-        <div class="bloc-form">
-          <label for="role">Rôle</label>
         </div>
         <div class="bloc-form">
           <input type="text" value="<?= $user["role"] ?>" name="role" id="role" />
         </div>
-        <button type="submit" class="btn">Modifier cet utilisateur</button>
+        <button type="submit" class="validate">Modifier cet utilisateur</button>
       </form>
     <?php endforeach; ?>
   </div>
