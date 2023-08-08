@@ -2,7 +2,6 @@
 
 require_once("composants/header.php");
 
-
 require_once("composants/background-fixed.php");
 
 require_once("composants/database.php");
@@ -52,9 +51,8 @@ $voitures = $requete->fetchAll();
       
     $(document).ready(function() {
 
-      // When the value of the input changes
-
       $('#priceRange, #mileageRange, #yearRange').on('input', function() {
+        
         var price = $('#priceRange').val();
         var mileage = $('#mileageRange').val();
         var year = $('#yearRange').val();
@@ -63,15 +61,12 @@ $voitures = $requete->fetchAll();
         document.getElementById('spanKm').innerHTML = mileage ;
         document.getElementById('spanYear').innerHTML = year ;
         
-    // Sending the AJAX request
-
     $.ajax({
-      url: 'fetch_cars.php', // The PHP file to retrieve the cars
+
+      url: 'fetch_cars.php',
       method: 'POST',
       data: { price: price, mileage: mileage, year: year },
       success: function(response) {
-
-        // Update car list
 
         $('#carList').html(response);
       }

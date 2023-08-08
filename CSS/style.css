@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
   min-height: 100%;
 }
 
@@ -11,14 +11,7 @@ body {
   word-break: break-word;
   margin: 0;
   padding: 10px;
-  text-transform: uppercase;
   background-color: rgb(247, 247, 247);
-}
-
-textarea {
-  font-family: 'Belanosima', sans-serif;
-  width: 80%;
-  padding: 5px;
 }
 
 .error {
@@ -47,7 +40,7 @@ textarea {
   width: 80%;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .validate:hover {
@@ -67,7 +60,7 @@ textarea {
   width: 80%;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .delete:hover {
@@ -99,7 +92,7 @@ h1 {
 }
 
 select {
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .navbar {
@@ -209,7 +202,7 @@ h1 {
 }
 
 select {
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .navbar1 {
@@ -495,6 +488,7 @@ li {
   text-transform: uppercase;
   color: white;
   text-shadow: 0 0 15px black;
+  background-color: rgba(0, 0, 0, 0.473);
   letter-spacing: 0.7px;
 }
 
@@ -708,12 +702,24 @@ label {
 }
 
 input {
-  height: 25px;
-  width: 80%;
-  padding: 5px;
+  width: 73%;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid gray;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
+}
+
+textarea {
+  font-family: 'Kanit', sans-serif;
+  width: 73%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#raison {
+  width: 78%;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .btn {
@@ -726,7 +732,7 @@ input {
   width: 80%;
   color: gray;
   text-transform: uppercase;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .title-modification {
@@ -766,6 +772,14 @@ input {
   .title-modification {
     font-size: 40px;
   }
+
+  input {
+    width: 76%;
+  }
+
+  textarea {
+    width: 76%;
+  }
 }  
 
 
@@ -788,8 +802,9 @@ input {
 }
 
 .title-card {
-  font-weight: 500;
+  font-weight: 400;
   padding: 30px;
+  text-transform: uppercase;
   margin: 0;
 }
 
@@ -809,7 +824,7 @@ input {
   color: rgb(0, 0, 0);
   list-style: none;
   text-transform: none;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .separator {
@@ -832,6 +847,11 @@ input {
 }
 
 @media screen and (min-width: 1400px) {
+  .container-vente {
+    width: 90%;
+    margin-left: 5%;
+  }
+
   .title-card {
     font-size: 26px;
   }
@@ -842,6 +862,7 @@ input {
 
   .caracteristiques {
     font-size: 22px;
+    font-weight: 300;
   }
 }
 
@@ -873,14 +894,15 @@ input {
 }
 
 .link-car {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border: 1px solid black;
+  background-color: rgb(19, 199, 19);
+  color: rgb(255, 255, 255);
   border-radius: 10px;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 20px;
   width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .btn-div {

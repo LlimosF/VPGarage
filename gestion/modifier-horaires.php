@@ -2,19 +2,11 @@
 
 require_once("../composants/utilisateur-connecte.php");
 
-// Include the database
-
 require_once("../composants/database.php");
-
-// We include the header on the page
 
 require_once("../composants/header-gestion.php");
 
-// We include the background of the page
-
 require_once("../composants/background-fixed.php");
-
-// We include the navigation bar
 
 require_once("../composants/navigation-gestion.php");
 
@@ -27,7 +19,8 @@ $horaires = $requete->fetchAll();
 ?>
 
 <div>
-  <div class="container-form">
+  <div class="container-vente">
+
     <?php
     
       require_once("../composants/horaire-lundi.php");
@@ -45,5 +38,6 @@ $horaires = $requete->fetchAll();
       require_once("../composants/horaire-dimanche.php");
 
     ?>
+    
   </div>
 </div>

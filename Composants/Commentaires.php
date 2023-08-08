@@ -1,22 +1,21 @@
 <?php
 
-// Include the database
-
-require_once("Database.php");
-
-// We retrieve our comments from the database
+require_once("database.php");
 
 $sql = "SELECT * FROM commentaires ORDER BY 'id' DESC";
 $requete = $db->query($sql);
 $commentaires = $requete->fetchAll();
 
-// We will display all our comments on the page
-
 ?>
 
 <div class="commentaire-container">
+
   <?php
-  foreach($commentaires as $commentaire): ?>
+
+    foreach($commentaires as $commentaire): 
+
+  ?>
+
   <div class="commentaire">
     <div class="top-commentaire">
       <div class="user">
@@ -31,7 +30,11 @@ $commentaires = $requete->fetchAll();
       <p><?= $commentaire["note"] ?> / 5</p>
     </div>
   </div>
+
   <?php 
+
     endforeach; 
+
   ?>
+  
 </div>

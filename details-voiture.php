@@ -9,29 +9,29 @@ require_once("composants/background-fixed.php");
 echo "<div class='page-vente'>";
 
 if (isset($_GET['id'])) {
-    $carId = $_GET['id'];
 
-    // Select car details from database using ID
+    $carId = $_GET['id'];
 
     $sql = "SELECT * FROM voitures WHERE id = :carId";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':carId', $carId, PDO::PARAM_INT);
     $stmt->execute();
 
-    // Check if the car exists
-
     if ($voiture = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
       $imageData = base64_encode($voiture['photo']);
       $imageType = 'jpeg';
+
       echo "<div class='card-vente details'>";
       echo '<h3 class="title-card">' . $voiture["nom"] . '</h3>';
 
       if (isset($voiture['photo']) && !empty($voiture['photo'])) {
+
         echo '<img src="data:image/' . $imageType . ';base64,' . $imageData . '" alt="Image" class="car-img">';
+
     }
 
-    ?>
+  ?>
 
     <hr class='separator'>
     <p class='caracteristiques'>Caractéristiques</p>
@@ -47,13 +47,21 @@ if (isset($_GET['id'])) {
     </ul>
 
 <?php
+
     } else {
-        echo 'Voiture non trouvée.';
+
+      echo '<h2 class="error">Voiture non trouvée.</h2>';
+
     }
-} else {
-    echo 'ID de voiture non spécifié.';
-}
+
+    } else {
+
+      echo '<h2 class="error">ID de voiture non spécifié.</h2>';
+
+    }
+    
 echo "</div>";
+
 ?>
 
 <form class="form" method="POST">
@@ -94,8 +102,8 @@ echo "</div>";
   
       }
   
-  
     }
+
   }
 
   ?>
@@ -105,7 +113,5 @@ echo "</div>";
 <?php 
 
 echo "</div>";
-
-// On inclu le footer
 
 require_once("composants/footer.php");

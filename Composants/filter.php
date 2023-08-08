@@ -1,4 +1,5 @@
 <?php
+
 require_once("../Composants/Database.php");
 
 $prix = $_GET['prix'];
@@ -24,4 +25,5 @@ foreach ($voitures as $voiture) {
     echo "<p>Année: " . $voiture['annee'] . "</p>";
 
 }
+
 ?>

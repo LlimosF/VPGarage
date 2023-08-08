@@ -1,45 +1,6 @@
 <?php
 
-// Check that the user is logged in
-
 require_once("../composants/verifier-admin.php");
-
-// Check that the form is correctly filled out
-
-if(!empty($_POST)) {
-  if (isset($_POST["jeudiam"], $_POST["jeudipm"]) && !empty($_POST["jeudiam"]) && !empty($_POST["jeudipm"])) {
-
-    // The value for Thursday morning
-
-    $jeudiam = $_POST["jeudiam"];
-
-    // The value for Thursday afternoon
-
-    $jeudipm = $_POST["jeudipm"];
-
-    // Include the database
-
-    require_once("Database.php");
-
-    $id = 4;
-
-    // We create the SQL query to modify the hours of Thursday
-
-    $sql = "UPDATE horaires SET matin = :jeudiam, apresmidi = :jeudipm WHERE id = :id";
-    $query = $db->prepare($sql);
-    $query->bindValue(':jeudiam', $jeudiam);
-    $query->bindValue(':jeudipm', $jeudipm);
-    $query->bindValue(':id', $id);
-    $query->execute();
-
-    if($query->execute()) {
-      header("Location: ".$_SERVER['PHP_SELF']);
-      exit();
-    }
-  }
-}
-
-// We retrieve Thursday's schedules from the database
 
 $sql = "SELECT * FROM horaires WHERE id = 4";
 $requete = $db->query($sql);
@@ -48,8 +9,6 @@ $horaires = $requete->fetchAll();
 foreach($horaires as $horaire):
 
 ?>
-
-<!-- We create the schedule change form for Thursday -->
 
 <form method="POST" class="form">
   <h3 class="title-form">Jeudi</h3>
@@ -66,8 +25,45 @@ foreach($horaires as $horaire):
     <input type="text" name="jeudipm" id="jeudipm" value="<?= $horaire["apresmidi"] ?>">
   </div>
   <button type="submit" class="validate">Changer pour le Jeudi</button>
+
+  <?php
+
+    if(!empty($_POST)) {
+      if (isset($_POST["jeudiam"], $_POST["jeudipm"]) && !empty($_POST["jeudiam"]) && !empty($_POST["jeudipm"])) {
+    
+        $jeudiam = $_POST["jeudiam"];
+    
+        $jeudipm = $_POST["jeudipm"];
+    
+        require_once("Database.php");
+    
+        $id = 4;
+    
+        $sql = "UPDATE horaires SET matin = :jeudiam, apresmidi = :jeudipm WHERE id = :id";
+        $query = $db->prepare($sql);
+        $query->bindValue(':jeudiam', $jeudiam);
+        $query->bindValue(':jeudipm', $jeudipm);
+        $query->bindValue(':id', $id);
+        $query->execute();
+    
+        if($query->execute()) {
+    
+          echo "<h2 class='success'>Changements prit en compte avec succès</h2>";
+    
+        } else {
+    
+          echo "<h2 class='error'>Erreur lors des changements</h2>";
+    
+        }
+      }
+    }
+
+  ?>
+
 </form>
 
 <?php
+
   endforeach; 
+  
 ?>

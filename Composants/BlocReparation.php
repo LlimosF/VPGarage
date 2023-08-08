@@ -10,15 +10,6 @@ require_once("Database.php");
 
 ?>
 
-<?php
-
-// We check that the form is correctly filled in
-
-
-
-// We display the contact form for the workshop
-
-?>
 <form class="form" method="POST">
   <h3 class="title-form">Contacter l'atelier</h3>
   <div class="bloc-form">
@@ -35,7 +26,9 @@ require_once("Database.php");
   </div>
   <div class="bloc-form">
     <select name="raison" id="raison" style="width: 80%; height: 40px">
+
       <?php
+
         $sqlRaison = "SELECT * FROM reparation";
         $requetes = $db->prepare($sqlRaison);
         $requetes->execute();
@@ -43,11 +36,17 @@ require_once("Database.php");
         $raisons = $requetes->fetchAll();
 
         foreach($raisons as $raison):
+
       ?>
+
       <option value="<?= $raison["title"] ?>"><?= $raison["title"] ?></option>
+
       <?php
+
         endforeach;
+
       ?>
+
     </select>
   </div>
   <div class="bloc-form">
@@ -56,21 +55,18 @@ require_once("Database.php");
   <button type="submit" class="validate">Nous contacter</button>
 
   <?php
+
     if (!empty($_POST)) {
       if (isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["telephone"], $_POST["raison"], $_POST["message"]) 
       && !empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && !empty($_POST["telephone"]) && !empty($_POST["raison"]) && !empty($_POST["message"])) {
     
-        // We check if the email field is an email address
-    
         if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-          die("L'adresse email est incorrecte !");
+
+          echo("<h2 class='error'>Adresse e-mail invalidate");
+
         }
     
-        // We prepare the SQL query to insert the form data into the table
-    
         $sql = "INSERT INTO `formulaire_atelier`(`nom`, `prenom`, `email`, `telephone`, `raison`, `message`) VALUES (:nom, :prenom, :email, :telephone, :raison, :message)";
-    
-        // We check that the data entered by the user is not malicious
     
         $nom = strip_tags($_POST["nom"]);
         $prenom = strip_tags($_POST["prenom"]);
@@ -81,16 +77,12 @@ require_once("Database.php");
     
         $query = $db->prepare($sql);
     
-        // We filled our table fields with the data entered by the user
-    
         $query->bindValue(":nom", $nom, PDO::PARAM_STR);
         $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
         $query->bindValue(":email", $email, PDO::PARAM_STR);
         $query->bindValue(":telephone", $telephone, PDO::PARAM_STR);
         $query->bindValue(":raison", $raison, PDO::PARAM_STR);
         $query->bindValue(":message", $message, PDO::PARAM_STR);
-    
-        // We send to the table
     
         $query->execute();
     
@@ -106,4 +98,5 @@ require_once("Database.php");
       }
     }
   ?>
+  
 </form>

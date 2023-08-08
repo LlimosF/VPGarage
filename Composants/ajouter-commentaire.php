@@ -1,14 +1,6 @@
 <?php
 
-// Include the database
-
 require_once("Database.php");
-
-// We check if the form is correctly filled
-
-
-
-// We display content
 
 ?>
 
