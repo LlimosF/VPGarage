@@ -67,7 +67,7 @@ $bandeauxBoucle = $requeteBandeau->fetchAll();
     
                 if($newQuery->execute()){
     
-                    echo "<h2 class='succes'>Changements prit en compte avec succès</h2>";
+                    echo "<h2 class='success'>Changements prit en compte avec succès</h2>";
     
                 } else {
     

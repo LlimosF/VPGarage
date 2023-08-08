@@ -54,7 +54,7 @@ $formulaires = $requete->fetchAll();
       
           if($stmt->execute()) {
               
-            echo "<h2 class='success>Formulaire supprimé</h2>";
+            echo "<h2 class='success'>Formulaire supprimé</h2>";
                     
           } else {
       

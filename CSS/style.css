@@ -857,7 +857,7 @@ textarea {
   }
 
   .ul-vente > li {
-    font-size: 22px
+    font-size: 18px
   }
 
   .caracteristiques {
@@ -918,7 +918,7 @@ textarea {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
-    height: 700px;
+    height: 800px;
     align-self: center;
     justify-self: center;
   }
