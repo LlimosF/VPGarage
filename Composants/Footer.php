@@ -29,9 +29,9 @@ $horaires = $requete->fetchAll();
   </div>
   <div class="social-link foot-bloc">
     <h3 class="footer-title">Liens</h3>
-    <img src="media/instagram.png" class="logo-social">
-    <img src="media/linkedin.png" class="logo-social">
-    <img src="media/instagram.png" class="logo-social">
+    <a href="https://www.florianllimos.fr"><img src="media/linternet.png" class="logo-social"></a>
+    <a href="https://www.florianllimos.fr"><img src="media/linternet.png" class="logo-social"></a>
+    <a href="https://www.florianllimos.fr"><img src="media/linternet.png" class="logo-social"></a>
     <p>06 22 00 55 84</p>
   </div>
   <div class="copyright foot-bloc">
