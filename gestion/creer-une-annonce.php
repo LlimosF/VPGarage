@@ -14,7 +14,7 @@ require_once("../composants/navigation-gestion.php");
 ?>
 
 <div>
-  <form method="POST" enctype="multipart/form-data" class="form">
+  <form method="POST" enctype="multipart/form-data" class="form-fix">
     <h3 class="title-form">Vendre une voiture</h3>
     <div class="bloc-form">
       <input type="text" name="nom" id="nom" placeholder="Nom de la voiture *">

@@ -13,7 +13,7 @@
   require_once("composants/boucle-description.php");
   
   ?>
-  <form class="form" method="POST">
+  <form class="form-fix" method="POST">
     <h3 class="title-form">Contacter l'atelier</h3>
     <div class="bloc-form">
       <input type="text" name="nom" id="nom" placeholder="Nom *" required>

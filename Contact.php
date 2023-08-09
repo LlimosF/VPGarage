@@ -8,7 +8,7 @@ require_once("composants/background-fixed.php");
 
 
 <div class="page">
-  <form class="form" method="POST">
+  <form class="form-fix" method="POST">
     <h3 class="title-form">Nous contacter</h3>
     <div class="bloc-form">
       <input type="text" name="nom" id="nom" placeholder="Nom *" required>

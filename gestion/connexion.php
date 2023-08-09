@@ -6,7 +6,7 @@ require_once("../composants/background-fixed.php");
     
 ?>
 
-<form method="POST" class="form connexion-form">
+<form method="POST" class="form-fix connexion-form">
     <h3 class="title-form">Connexion</h3>
     <div class="bloc-form">
         <input type="email" name="email" id="email" placeholder="Adresse e-mail" required>

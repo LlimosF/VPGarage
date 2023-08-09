@@ -16,7 +16,7 @@ require_once("../composants/verifier-admin.php");
 ?>
 
 <div>
-  <form method="POST" class="form">
+  <form method="POST" class="form-fix">
     <h3 class="title-form">Inscription</h3>
     <div class="bloc-form">
       <input type="text" name="nom" id="nom" placeholder="Nom *" required>

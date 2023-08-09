@@ -9,7 +9,7 @@
       content="Vincent Parrot, garagiste depuis plusieurs année. Vente de véhicules."
     />
   <title>Vincent Parrot</title>
-  <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+  <link rel="icon" type="image/x-icon" href="media/favicon.png">
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/BackgroundFixed.css">
   <link rel="stylesheet" href="CSS/Footer.css">

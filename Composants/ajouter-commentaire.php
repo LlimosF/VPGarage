@@ -16,7 +16,7 @@ require_once("Database.php");
     </p>
   </div>
   <div class="form-about">
-    <form method="POST" class="form">
+    <form method="POST" class="form-fix">
       <h3 class="title-form">Laisser un commentaire</h3>
       <div class="bloc-form">
         <input type="text" name="nom" id="nom" placeholder="Votre nom *" required>

@@ -64,7 +64,7 @@ echo "</div>";
 
 ?>
 
-<form class="form" method="POST">
+<form class="form-fix" method="POST">
   <h3 class="title-form"><?= $voiture["nom"] ?></h3>
   <div class="bloc-form">
     <input type="text" id="vehicule" name="vehicule" value="<?= $voiture["nom"] ?> " readonly>

@@ -19,7 +19,7 @@
     <nav class="navbar container">
       <h1>Vincent Parrot</h1>
       <input type="checkbox" id="toggler" />
-      <label for="toggler"><img src="media/burger.png" class="burgerLogo"></img></label>
+      <label for="toggler"><img src="../media/burger.png" class="burgerLogo"></img></label>
       <div class="menu">
         <ul class="list">
           <a href="../index.php"><li class="LiNavTop">Accueil</li></a>

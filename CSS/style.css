@@ -688,6 +688,17 @@ span {
   background-color: white;
 }
 
+.form-fix {
+  width: 80%;
+  box-shadow: 0 0 10px black;
+  margin-left: 10%;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-bottom: 30px;
+  background-color: white;
+}
+
 label {
   font-size: 15px;
   color: rgb(80, 80, 80);
@@ -755,7 +766,7 @@ textarea {
 }
 
 @media screen and (min-width: 600px) {
-  .form {
+  .form-fix {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
