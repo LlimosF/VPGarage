@@ -19,7 +19,7 @@ $users = $requete->fetchAll();
 ?>
 
 <div>
-    <div class="container-form">
+    <div class="container-vente">
 
 
         <?php 

@@ -2,7 +2,7 @@
 
   <?php
 
-    require_once("Composants/Database.php");
+    require_once("composants/database.php");
 
     $sqlBandeau = "SELECT * FROM bandeau_reparation";
     $requeteBandeau = $db->query($sqlBandeau);

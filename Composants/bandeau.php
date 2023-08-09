@@ -1,6 +1,6 @@
 <?php
 
-require_once("../Composants/Database.php");
+require_once("../composants/database.php");
 
 
 ?>

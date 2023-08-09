@@ -1,11 +1,11 @@
 <?php
 
-$userdb = "root";
+$userdb = "";
 $pass = '';
 
 try {
 
-  $db = new PDO('mysql:host=localhost;dbname=database', $userdb, $pass);
+  $db = new PDO('mysql:host=;dbname=database', $userdb, $pass);
 
 } catch (PDOException $e) {
 

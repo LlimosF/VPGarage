@@ -4,7 +4,7 @@ $price = $_POST['price'];
 $mileage = $_POST['mileage'];
 $year = $_POST['year'];
 
-require_once("Composants/Database.php");
+require_once("composants/database.php");
 
 $query = "SELECT * FROM voitures WHERE prix <= :price";
 

@@ -2,7 +2,7 @@
 
   require_once("composants/header.php");
 
-  require_once("Composants/background-fixed.php");
+  require_once("composants/background-fixed.php");
 
   require_once("composants/database.php");
   
@@ -107,6 +107,6 @@ endforeach;
 
 <?php
 
-require_once("Composants/Footer.php");
+require_once("composants/footer.php");
 
 ?>

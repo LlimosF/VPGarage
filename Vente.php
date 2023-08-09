@@ -39,12 +39,6 @@ $voitures = $requete->fetchAll();
   </form>
   <div id="carList"></div>
 
-  <?php
-
-    require_once("Composants/Footer.php");
-
-    ?>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
@@ -76,4 +70,10 @@ $voitures = $requete->fetchAll();
 
 
 </script>
+
+<?php
+
+require_once("composants/footer.php");
+
+?>
 

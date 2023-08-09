@@ -2,7 +2,7 @@
 
   require_once("composants/header.php");
 
-  require_once("Composants/background-fixed.php");
+  require_once("composants/background-fixed.php");
 
 ?>
 
@@ -33,7 +33,7 @@
 
   require_once("composants/boucle-bandeau.php");
 
-  require_once("Composants/ajouter-commentaire.php");
+  require_once("composants/ajouter-commentaire.php");
 
 ?>
 

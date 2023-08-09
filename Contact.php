@@ -50,7 +50,7 @@ require_once("composants/background-fixed.php");
 
         }
     
-        require_once("Composants/Database.php");
+        require_once("composants/database.php");
     
         $sql = "INSERT INTO `formulaire_contact`(`nom`, `prenom`, `email`, `telephone`, `raison`, `message`) VALUES (:nom, :prenom, :email, :telephone, :raison, :message)";
     
